@@ -54,7 +54,6 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
       | xargs -r apt-mark manual \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
-    && ln -sf /usr/lib/riscv64-linux-gnu/libatomic.so.1 /usr/lib/libatomic.so.1
     # smoke tests
     && node --version \
     && npm --version
