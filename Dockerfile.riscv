@@ -7,7 +7,7 @@ RUN groupadd --gid 1000 node \
 ENV NODE_VERSION 18.4.0
 
 RUN set -ex \
-    && apt-get update && apt-get install -y ca-certificates curl wget dirmngr xz-utils --no-install-recommends \
+    && apt-get update && apt-get install -y ca-certificates curl wget dirmngr xz-utils libatomic --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/node-v$NODE_VERSION-linux-riscv64.tar.xz" \
     && curl -fsSLO --compressed "https://unofficial-builds.nodejs.org/download/release/v$NODE_VERSION/SHASUMS256.txt" \
